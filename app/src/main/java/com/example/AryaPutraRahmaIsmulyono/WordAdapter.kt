@@ -37,13 +37,13 @@ class WordAdapter(private val letterId: String, context: Context) :
 
     init {
         // Retrieve the list of words from res/values/arrays.xml
-        val words = context.resources.getStringArray(R.array.words).toList()
+        val words = context.resources.getStringArray(R.array.Lokasi).toList()
 
         filteredWords = words
             // Returns items in a collection if the conditional clause is true,
             // in this case if an item starts with the given letter,
             // ignoring UPPERCASE or lowercase.
-            .filter { it.startsWith(letterId, ignoreCase = true) }
+            .filter { it.contains(letterId, ignoreCase = true) }
             // Returns a collection that it has shuffled in place
             .shuffled()
             // Returns the first n items as a [List]

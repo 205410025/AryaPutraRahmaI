@@ -22,6 +22,13 @@
         <item>Hutan</item>
         <item>Religi</item>
     </string-array>
+    <string-array name="Lokasi">
+        <item>Candi Borobudur</item>
+        <item>Air Terjun Grenjengan Kembar</item>
+        <item>Pegunungan Ketep Pas</item>
+        <item>Hutan Pinus Kragilan</item>
+        <item>Religi Makam Kyai Spanjang</item>
+    </string-array>
     <string-array name="words">
         <item>aargh</item>
         <item>about</item>
