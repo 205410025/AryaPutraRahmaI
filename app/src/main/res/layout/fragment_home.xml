@@ -10,12 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--menampilkan button atau tombol. layout maginTop digunakan untuk mengatur jarak atas secara vertikal.
-        backgroundTint digunakan untuk mengatur warna background pada button. fontFamily digunakan untuk mengatur
-        gaya bentuk huruf. textColor digunakan untuk memberi warna pada text. textStyle digunakan memberi gaya huruf
-        rippleColor digunakan untuk memberikan efek warna.
-        -->
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="0dp"
@@ -58,6 +52,12 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck" />
 
+        <!--menampilkan button atau tombol. layout height digunakan untuk mengatur secara vertikal.
+        layout width digunakan untuk mengatur jarak secara vertikal. backgroundTint digunakan untuk
+        mengatur warna background pada button. fontFamily digunakan untuk mengatur gaya bentuk huruf.
+        textColor digunakan untuk memberi warna pada text. rippleColor digunakan untuk memberikan
+        efek warna.
+        -->
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
