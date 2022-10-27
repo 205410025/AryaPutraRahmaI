@@ -1,90 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--mengatur frame layout-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!--menampilkan gambar untuk background. layout width digunakan untuk tampilan secara lebar(horizontal).
-    layout height digunakan untuk tampilan secara tinggi(vertikal). scaleType digunakan untuk posisi gambar.
-    srcCompat digunakan untuk mengambil gambar yang ada (bisa import terlebih dahulu)
-    -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"/>
 
-    <!--menampilkan textview. layout width digunakan untuk tampilan jarak secara lebar(horizontal).
-    layout height digunakan untuk tampilan jarak secara tinggi(vertikal). layout maginTop digunakan
-    untuk mengatur batas sebelah atas. fontFamily digunakan untuk gaya bentuk huruf. text digunakan
-    untu menampilkan kalimat yang ingin ditampilkan. textColor digunakan untuk memberi warna pada
-    text.
-    -->
-
-    <ImageView
-    android:id="@+id/imageView"
-    android:layout_width="wrap_content"
-    android:layout_height="737dp"
-    android:contentDescription="@string/todo"
-    android:scaleType="centerCrop"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.0"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.0"
-    app:srcCompat="@drawable/stupa_java_magelang_borobudur_wallpaper_preview" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/magelang"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
-
-    <!--menampilkan button atau tombol. layout maginTop digunakan untuk mengatur jarak atas secara vertikal.
-    backgroundTint digunakan untuk mengatur warna background pada button. fontFamily digunakan untuk mengatur
-    gaya bentuk huruf. textColor digunakan untuk memberi warna pada text. textStyle digunakan memberi gaya huruf
-    rippleColor digunakan untuk memberikan efek warna.
-    -->
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:rotationX="25"
-        android:text="@string/selamat_datang"
-        android:textColor="#FBFBFB"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="sans-serif-medium"
-        android:lineSpacingExtra="8sp"
-        android:text="@string/next"
-        android:textColor="@color/black"
-        android:textStyle="bold|italic"
-        android:typeface="monospace"
-        app:cornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:rippleColor="#F0F8FF" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

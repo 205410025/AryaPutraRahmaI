@@ -35,12 +35,11 @@ import com.example.AryaPutraRahmaIsmulyono.databinding.FragmentLetterListBinding
 class LetterListFragment : Fragment() {
     private var _binding: FragmentLetterListBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    // Properti ini hanya valid antara onCreateView dan onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var recyclerView: RecyclerView
-    // Keeps track of which LayoutManager is in use for the [RecyclerView]
+    // Melacak LayoutManager mana yang digunakan untuk [RecyclerView]
     private var isLinearLayoutManager = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +52,7 @@ class LetterListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Retrieve and inflate the layout for this fragment
+        // Ambil dan dikembangkan tata letak untuk fragmen ini
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
@@ -61,8 +60,8 @@ class LetterListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
-        // Sets the LayoutManager of the recyclerview
-        // On the first run of the app, it will be LinearLayoutManager
+        // mengatur LayoutManager dari recyclerview Saat pertama kali menjalankan aplikasi, akan
+        // menjadi LinearLayoutManager
         chooseLayout()
     }
 
@@ -87,7 +86,7 @@ class LetterListFragment : Fragment() {
      * Notice that because the enclosing class has changed from an Activity to a Fragment,
      * the signature of the LayoutManagers has to slightly change.
      */
-    //digunakan untuk mengatur recyclerview ke linear/grid layout
+    // digunakan untuk mengatur recyclerview ke linear/grid layout
     private fun chooseLayout() {
         if (isLinearLayoutManager) {
             recyclerView.layoutManager = LinearLayoutManager(context)
@@ -113,19 +112,13 @@ class LetterListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_switch_layout -> {
-                // Sets isLinearLayoutManager (a Boolean) to the opposite value
+                // Menyetel isLinearLayoutManager (sebuah Boolean) ke nilai yang berlawanan
                 isLinearLayoutManager = !isLinearLayoutManager
-                // Sets layout and icon
+                // Mengatur tata letak dan ikon
                 chooseLayout()
                 setIcon(item)
-
                 return true
             }
-            // Otherwise, do nothing and use the core event handling
-
-            // when clauses require that all possible paths be accounted for explicitly,
-            // for instance both the true and false cases if the value is a Boolean,
-            // or an else to catch all unhandled cases.
             else -> super.onOptionsItemSelected(item)
         }
     }

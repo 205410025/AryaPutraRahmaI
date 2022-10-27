@@ -1,18 +1,3 @@
-/*
- * Copyright (C) 2020 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.example.AryaPutraRahmaIsmulyono
 
 import android.content.Context
@@ -32,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 class LetterAdapter (context: Context) :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
-    // Memanggil daftar wisata dari array
+    // memanggil daftar wisata dari array
     private val list = context.resources.getStringArray(R.array.Wisata).toList()
 
     /**
@@ -54,7 +39,7 @@ class LetterAdapter (context: Context) :
             .from(parent.context)
             .inflate(R.layout.item_view, parent, false)
 
-        // Setup custom accessibility delegate to set the text read
+        // atur delegasi aksesibilitas khusus untuk mengatur pembacaan teks
         layout.accessibilityDelegate = Accessibility
         return LetterViewHolder(layout)
     }
@@ -68,16 +53,16 @@ class LetterAdapter (context: Context) :
 
         // Menetapkan [OnClickListener] ke tombol yang ada di [ViewHolder]
         holder.button.setOnClickListener {
-            // Buat action dari WordList ke DetailList
+            // buat action dari WordList ke DetailList
             // menggunakan argumen yang diperlukan
             val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
-            // Navigate using that action
+            // aksi pada navigasi
             holder.view.findNavController().navigate(action)
         }
     }
 
-    // Setup custom accessibility delegate to set the text read with
-    // an accessibility service
+
+    // Atur aksesibilitas khusus untuk mengatur teks yang dibaca dengan layanan aksesibilitas
     companion object Accessibility : View.AccessibilityDelegate() {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun onInitializeAccessibilityNodeInfo(
@@ -85,10 +70,9 @@ class LetterAdapter (context: Context) :
             info: AccessibilityNodeInfo
         ) {
             super.onInitializeAccessibilityNodeInfo(host, info)
-            // With `null` as the second argument to [AccessibilityAction], the
-            // accessibility service announces "double tap to activate".
-            // If a custom string is provided,
-            // it announces "double tap to <custom string>".
+            // Dengan `null` sebagai argumen kedua untuk [AccessibilityAction], layanan aksesibilitas
+            // mengumumkan "ketuk dua kali untuk mengaktifkan". Jika string khusus disediakan, ia mengumumkan
+            // "ketuk dua kali ke <string khusus>".
             val customString = host.context?.getString(R.string.look_up_words)
             val customClick =
                 AccessibilityNodeInfo.AccessibilityAction(

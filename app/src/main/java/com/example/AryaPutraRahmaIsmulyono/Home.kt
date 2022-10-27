@@ -17,8 +17,6 @@ import com.example.AryaPutraRahmaIsmulyono.databinding.FragmentHomeBinding
 class Home : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentHomeBinding? = null
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
