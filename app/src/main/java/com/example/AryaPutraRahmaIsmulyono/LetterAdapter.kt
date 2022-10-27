@@ -32,7 +32,7 @@ import androidx.recyclerview.widget.RecyclerView
 class LetterAdapter (context: Context) :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
-    // Generates a [CharRange] from 'A' to 'Z' and converts it to a list
+    // Memanggil daftar wisata dari array
     private val list = context.resources.getStringArray(R.array.Wisata).toList()
 
     /**
@@ -66,10 +66,10 @@ class LetterAdapter (context: Context) :
         val item = list.get(position)
         holder.button.text = item.toString()
 
-        // Assigns a [OnClickListener] to the button contained in the [ViewHolder]
+        // Menetapkan [OnClickListener] ke tombol yang ada di [ViewHolder]
         holder.button.setOnClickListener {
-            // Create an action from WordList to DetailList
-            // using the required arguments
+            // Buat action dari WordList ke DetailList
+            // menggunakan argumen yang diperlukan
             val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())
             // Navigate using that action
             holder.view.findNavController().navigate(action)

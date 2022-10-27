@@ -87,6 +87,7 @@ class LetterListFragment : Fragment() {
      * Notice that because the enclosing class has changed from an Activity to a Fragment,
      * the signature of the LayoutManagers has to slightly change.
      */
+    //digunakan untuk mengatur recyclerview ke linear/grid layout
     private fun chooseLayout() {
         if (isLinearLayoutManager) {
             recyclerView.layoutManager = LinearLayoutManager(context)
@@ -95,7 +96,7 @@ class LetterListFragment : Fragment() {
         }
         recyclerView.adapter = LetterAdapter(requireContext())
     }
-
+    //mengatur icon pada menu untuk recyclerview
     private fun setIcon(menuItem: MenuItem?) {
         if (menuItem == null)
             return

@@ -8,16 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.AryaPutraRahmaIsmulyono.databinding.FragmentHomeBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  * Use the [Home.newInstance] factory method to
  * create an instance of this fragment.
  */
+//class home menggunakan fragment
 class Home : Fragment() {
     // TODO: Rename and change types of parameters
     private var _binding: FragmentHomeBinding? = null
@@ -35,7 +31,7 @@ class Home : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // button/tombol menggunakan navigasi untuk berpindah halaman (home->letterListFragment)
         binding.button.setOnClickListener {
             findNavController().navigate(R.id.action_home2_to_letterListFragment)
         }
